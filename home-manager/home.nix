@@ -10,7 +10,7 @@
   # You can import other home-manager modules here
   imports = [
     # If you want to use home-manager modules from other flakes (such as nix-colors):
-     inputs.nix-colors.homeManagerModule
+    # inputs.nix-colors.homeManagerModule
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
@@ -21,7 +21,7 @@
       # If you want to use overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
 
-      # Or define it inline, for example:
+      # Or defin  e it inline, for example:
       # (final: prev: {
       #   hi = final.hello.overrideAttrs (oldAttrs: {
       #     patches = [ ./change-hello-to-hi.patch ];
@@ -40,12 +40,13 @@
   # TODO: Set your username
   home = {
     username = "marie";
-    homeDirectory = "/home/marie";
-  };
+    homeDirectory = "/home/marie"; };
     programs.zsh.autosuggestion.enable = true;
     programs.zsh.shellAliases = { backup = "restic -r rclone:onedrive:/backup/server backup --verbose /home";};
-    programs.zsh.shellAliases = { update = "sudo nix flake update /home/marie/Dokumente/laptop";};
-    programs.zsh.shellAliases = { rebuild = "sudo nixos-rebuild --flake /home/marie/Dokumente/laptop switch";};
+    programs.zsh.shellAliases = { update = "sudo nix flake update /home/marie/Dokumente/sexos";};
+    programs.zsh.shellAliases = { rebuild = "sudo nixos-rebuild --flake /home/marie/Dokumente/sexos switch";};
+    programs.zsh.oh-my-zsh.enable = true;
+    programs.zsh.oh-my-zsh.theme = "crunch";
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [     
@@ -112,7 +113,6 @@
     catppuccin-gtk
     spotify
     betterdiscordctl
-    gtopsz
     openconnect
     freerdp
     killall
@@ -138,7 +138,7 @@
   })
     gnomeExtensions.burn-my-windows
     gnomeExtensions.desktop-cube
-    gnomeExtensions.compiz-windows-effects
+    gnomeExtensions.compiz-windows-effect
   ];
 
   # Enable home-manager and git
