@@ -36,4 +36,23 @@
       };
     };
   };
+#    outputs = {
+#    self,
+#    nixpkgs,
+#    home-manager,
+#    ...
+#  } @ inputs: let
+#    inherit (self) outputs;
+#  in {
+    # NixOS configuration entrypoint
+#    # Available through 'nixos-rebuild --flake .#your-hostname'
+#    nixosConfigurations = {
+#      # FIXME replace with your hostname
+#      serva = nixpkgs.lib.nixosSystem {
+#        specialArgs = {inherit inputs outputs;};
+#        # > Our main nixos configuration file <
+#        modules = [./nixos/server.nix];
+#      };
+#    };
+#  };
 }

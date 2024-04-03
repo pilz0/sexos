@@ -40,13 +40,35 @@
   # TODO: Set your username
   home = {
     username = "marie";
-    homeDirectory = "/home/marie"; };
+    homeDirectory = "/home/marie"; 
+    };
+    programs.zsh.enable = true;
     programs.zsh.autosuggestion.enable = true;
     programs.zsh.shellAliases = { backup = "restic -r rclone:onedrive:/backup/server backup --verbose /home";};
     programs.zsh.shellAliases = { update = "sudo nix flake update /home/marie/Dokumente/sexos";};
     programs.zsh.shellAliases = { rebuild = "sudo nixos-rebuild --flake /home/marie/Dokumente/sexos switch";};
-    programs.zsh.oh-my-zsh.enable = true;
-    programs.zsh.oh-my-zsh.theme = "crunch";
+    programs.zsh.shellAliases = { shrun = "cat /home/marie/Dokumente/sexos/home-manager/home.nix";};
+    programs.zsh.shellAliases = { show = "cat /home/marie/Dokumente/sexos/home-manager/home.nix";};
+
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+    # Configuration written to ~/.config/starship.toml
+    settings = {
+      # add_newline = false;
+
+      # character = {
+      #   success_symbol = "[➜](bold green)";
+      #   error_symbol = "[➜](bold red)";
+      # };
+
+      # package.disabled = true;
+    };
+  };
+
+programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; PasswordManagerEnabled = false; cookies = "reject"; DisableFirefoxStudies = true; };
+
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   home.packages = with pkgs; [     
@@ -154,3 +176,24 @@
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.11";
 }
+# copilot wrote this
+  
+  #I have a problem with the  catppuccino-gtk  theme. I have installed it with the  home.packages  attribute and it works fine. But when I try to change the theme with the  gnome-tweaks  tool, the theme does not change. I have tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I have also tried to change the theme with the  gsettings  command, but it does not work either. 
+ # I have also tried to change the theme with the  dconf-editor  tool, but it does not work either. 
+ # I
