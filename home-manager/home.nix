@@ -81,6 +81,7 @@ programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; Pas
     davinci-resolve
     neofetch
     beeper
+    ollama
     qbittorrent
     openvpn3
     signal-desktop-beta
@@ -149,7 +150,6 @@ programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; Pas
     brlaser
     pipes
     catppuccin-gtk
-    catppuccin
     telegram-desktop
     picocom
     dnsmasq
