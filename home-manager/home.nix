@@ -152,6 +152,7 @@ programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; Pas
     catppuccin-gtk
     telegram-desktop
     picocom
+    spicetify-cli
     dnsmasq
     (catppuccin-gtk.override {
     accents = [ "pink" ]; # You can specify multiple accents here to output multiple themes
