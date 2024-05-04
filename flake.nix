@@ -4,27 +4,32 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    # Spicetify
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
     # Home manager
     home-manager.url = "github:nix-community/home-manager/";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
     # TODO: Add any other flake you might need
-    # hardware.url = "github:nixos/nixos-hardware";
-
-    # Shameless plug: looking for a way to nixify your themes and make
-    # everything match nicely? Try nix-colors!
-    # nix-colors.url = "github:misterio77/nix-colors";
   };
 
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    spicetify-nix, 
     ...
   } @ inputs: let
     inherit (self) outputs;
+    pkgs = import nixpkgs { system = "x84_64-linux"; };
   in {
+     homeConfigurations."marie" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = {inherit spicetify-nix;};
+        modules = [
+            ./home.nix
+            ./spicetify.nix # file where you configure spicetify
+        ];
+     };
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
