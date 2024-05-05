@@ -9,6 +9,7 @@
 }: {
   # You can import other home-manager modules here
   imports = [
+  inputs.spicetify-nix.homeManagerModules.default
     # If you want to use home-manager modules from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModule
     # You can also split up your configuration and import pieces of it here:
@@ -84,6 +85,7 @@ programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; Pas
     qbittorrent
     openvpn3
     signal-desktop-beta
+    spicetify-cli
     zsh
     putty
     nmap
@@ -151,7 +153,6 @@ programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; Pas
     catppuccin-gtk
     telegram-desktop
     picocom
-    spicetify-cli
     dnsmasq
     (catppuccin-gtk.override {
     accents = [ "pink" ]; # You can specify multiple accents here to output multiple themes
@@ -166,7 +167,7 @@ programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; Pas
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-
+  services.tailscale.enable = true;
   programs.git.userName = "pilz0";
   programs.git.userEmail = "marie0@riseup.net";  
 
