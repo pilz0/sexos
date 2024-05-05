@@ -131,6 +131,7 @@
       extraGroups = ["wheel" "networkmanager" ];
     };
   };
+  services.tailscale.enable = true;
   programs.steam.enable = true;
   environment.gnome.excludePackages = with pkgs.gnome; [
     epiphany

@@ -167,7 +167,6 @@ programs.firefox.policies = { DisablePocket = true; DisableTelemetry = true; Pas
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-  services.tailscale.enable = true;
   programs.git.userName = "pilz0";
   programs.git.userEmail = "marie0@riseup.net";  
 
